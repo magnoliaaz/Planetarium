@@ -1,0 +1,74 @@
+[
+    {
+        "name":"Mercury",
+        "diameter":"4879 km",
+        "temperature":"167°C",
+        "gravity":"3.7 m/s²",
+        "distance":"57.9 million km",
+        "satellites":"0",
+        "description":"Planet terkecil di tata surya."
+    },
+    {
+        "name":"Venus",
+        "diameter":"12104 km",
+        "temperature":"464°C",
+        "gravity":"8.87 m/s²",
+        "distance":"108.2 million km",
+        "satellites":"0",
+        "description":"Planet terpanas di tata surya."
+    },
+    {
+        "name":"Earth",
+        "diameter":"12742 km",
+        "temperature":"15°C",
+        "gravity":"9.8 m/s²",
+        "distance":"149.6 million km",
+        "satellites":"1",
+        "description":"Planet tempat kehidupan berada."
+    },
+    {
+        "name":"Mars",
+        "diameter":"6779 km",
+        "temperature":"-63°C",
+        "gravity":"3.7 m/s²",
+        "distance":"227.9 million km",
+        "satellites":"2",
+        "description":"Planet merah yang menjadi target eksplorasi manusia."
+    },
+    {
+        "name":"Jupiter",
+        "diameter":"139820 km",
+        "temperature":"-145°C",
+        "gravity":"24.79 m/s²",
+        "distance":"778.5 million km",
+        "satellites":"95",
+        "description":"Planet terbesar di tata surya."
+    },
+    {
+        "name":"Saturn",
+        "diameter":"116460 km",
+        "temperature":"-178°C",
+        "gravity":"10.44 m/s²",
+        "distance":"1.43 billion km",
+        "satellites":"146",
+        "description":"Planet bercincin yang sangat terkenal."
+    },
+    {
+        "name":"Uranus",
+        "diameter":"50724 km",
+        "temperature":"-224°C",
+        "gravity":"8.69 m/s²",
+        "distance":"2.87 billion km",
+        "satellites":"27",
+        "description":"Planet es dengan rotasi yang unik."
+    },
+    {
+        "name":"Neptune",
+        "diameter":"49244 km",
+        "temperature":"-214°C",
+        "gravity":"11.15 m/s²",
+        "distance":"4.50 billion km",
+        "satellites":"14",
+        "description":"Planet terjauh dalam tata surya."
+    }
+]
