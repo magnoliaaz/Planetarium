@@ -1,74 +1,83 @@
 [
-    {
-        "name":"Mercury",
-        "diameter":"4879 km",
-        "temperature":"167°C",
-        "gravity":"3.7 m/s²",
-        "distance":"57.9 million km",
-        "satellites":"0",
-        "description":"Planet terkecil di tata surya."
-    },
-    {
-        "name":"Venus",
-        "diameter":"12104 km",
-        "temperature":"464°C",
-        "gravity":"8.87 m/s²",
-        "distance":"108.2 million km",
-        "satellites":"0",
-        "description":"Planet terpanas di tata surya."
-    },
-    {
-        "name":"Earth",
-        "diameter":"12742 km",
-        "temperature":"15°C",
-        "gravity":"9.8 m/s²",
-        "distance":"149.6 million km",
-        "satellites":"1",
-        "description":"Planet tempat kehidupan berada."
-    },
-    {
-        "name":"Mars",
-        "diameter":"6779 km",
-        "temperature":"-63°C",
-        "gravity":"3.7 m/s²",
-        "distance":"227.9 million km",
-        "satellites":"2",
-        "description":"Planet merah yang menjadi target eksplorasi manusia."
-    },
-    {
-        "name":"Jupiter",
-        "diameter":"139820 km",
-        "temperature":"-145°C",
-        "gravity":"24.79 m/s²",
-        "distance":"778.5 million km",
-        "satellites":"95",
-        "description":"Planet terbesar di tata surya."
-    },
-    {
-        "name":"Saturn",
-        "diameter":"116460 km",
-        "temperature":"-178°C",
-        "gravity":"10.44 m/s²",
-        "distance":"1.43 billion km",
-        "satellites":"146",
-        "description":"Planet bercincin yang sangat terkenal."
-    },
-    {
-        "name":"Uranus",
-        "diameter":"50724 km",
-        "temperature":"-224°C",
-        "gravity":"8.69 m/s²",
-        "distance":"2.87 billion km",
-        "satellites":"27",
-        "description":"Planet es dengan rotasi yang unik."
-    },
-    {
-        "name":"Neptune",
-        "diameter":"49244 km",
-        "temperature":"-214°C",
-        "gravity":"11.15 m/s²",
-        "distance":"4.50 billion km",
-        "satellites":"14",
-        "description":"Planet terjauh dalam tata surya."
-    }
+  {
+  "name": "Matahari",
+  "diameter": "1.392.700 km",
+  "temperature": "5.500°C",
+  "gravity": "274 m/s²",
+  "satellites": "8 Planet",
+  "description": "Matahari adalah bintang pusat Tata Surya.",
+  "image": "images/matahari.png"
+  },
+  {
+    "name": "Merkurius",
+    "diameter": "4879 km",
+    "temperature": "167°C",
+    "gravity": "3.7 m/s²",
+    "satellites": "0",
+    "description": "Planet terkecil dan terdekat dengan Matahari.",
+    "image": "images/merkurius.png"
+  },
+  {
+    "name": "Venus",
+    "diameter": "12104 km",
+    "temperature": "464°C",
+    "gravity": "8.87 m/s²",
+    "satellites": "0",
+    "description": "Planet terpanas di tata surya.",
+    "image": "images/venus.png"
+  },
+  {
+    "name": "Bumi",
+    "diameter": "12742 km",
+    "temperature": "15°C",
+    "gravity": "9.8 m/s²",
+    "satellites": "1",
+    "description": "Satu-satunya planet yang diketahui mendukung kehidupan.",
+    "image": "images/bumi.png"
+  },
+  {
+    "name": "Mars",
+    "diameter": "6779 km",
+    "temperature": "-65°C",
+    "gravity": "3.71 m/s²",
+    "satellites": "2",
+    "description": "Dikenal sebagai Planet Merah.",
+    "image": "images/mars.png"
+  },
+  {
+    "name": "Jupiter",
+    "diameter": "139820 km",
+    "temperature": "-110°C",
+    "gravity": "24.79 m/s²",
+    "satellites": "95",
+    "description": "Planet terbesar di tata surya.",
+    "image": "images/jupiter.png"
+  },
+  {
+    "name": "Saturnus",
+    "diameter": "116460 km",
+    "temperature": "-140°C",
+    "gravity": "10.44 m/s²",
+    "satellites": "146",
+    "description": "Terkenal dengan cincin indahnya.",
+    "image": "images/saturnus.png"
+  },
+  {
+    "name": "Uranus",
+    "diameter": "50724 km",
+    "temperature": "-195°C",
+    "gravity": "8.69 m/s²",
+    "satellites": "27",
+    "description": "Berputar hampir menyamping.",
+    "image": "images/uranus.png"
+  },
+  {
+    "name": "Neptunus",
+    "diameter": "49244 km",
+    "temperature": "-200°C",
+    "gravity": "11.15 m/s²",
+    "satellites": "14",
+    "description": "Planet terjauh dari Matahari.",
+    "image": "images/neptunus.png"
+  }
 ]

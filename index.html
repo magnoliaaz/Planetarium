@@ -2,245 +2,112 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Planetarium Interaktif</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-
         <div class="container">
-
-            <a class="navbar-brand" href="#">
-                Planetarium
-            </a>
-
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menu">
-
+            <a class="navbar-brand fw-bold" href="#">Planetarium</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
-
             </button>
-
-            <div class="collapse navbar-collapse"
-                 id="menu">
-
+            <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#hero">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#solar-system">
-                            Solar System
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#planet-info">
-                            Planet
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#statistics">
-                            Statistics
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#observatory">
-                            Observatory
-                        </a>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solar-system">Solar System</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#statistics">Statistics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#observatory">Observatory</a></li>
                 </ul>
-
             </div>
-
         </div>
-
     </nav>
 
-    <!-- HERO -->
-
     <section id="hero">
-
         <canvas id="starCanvas"></canvas>
-
         <div class="container">
-
             <div class="row min-vh-100 align-items-center">
-
                 <div class="col-lg-6">
-
-                    <h1 class="hero-title">
-
-                        Planetarium Interaktif
-
-                    </h1>
-
-                    <p class="hero-text">
-
-                        Jelajahi tata surya dan
-                        temukan fakta menarik
-                        tentang planet.
-
-                    </p>
-
-                    <a href="#solar-system"
-                       class="btn btn-primary">
-
-                        Explore Now
-
-                    </a>
-
+                    <h1 class="hero-title">Planetarium Interaktif</h1>
+                    <p class="hero-text text-light-50 mt-3">Jelajahi tata surya dan temukan fakta menarik tentang planet.</p>
+                    <a href="#solar-system" class="btn btn-primary mt-3 px-4 py-2">Explore Now</a>
                 </div>
-
                 <div class="col-lg-6 text-center">
-
                     <div class="hero-planet"></div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- SOLAR SYSTEM -->
+    <section id="solar-system" class="position-relative">
+        
+        <button id="btn-resume" class="btn btn-outline-light position-absolute d-none" style="top: 100px; left: 30px; z-index: 100;">
+            ← Kembali & Putar Orbit
+        </button>
 
-    <section id="solar-system">
-
-        <div class="container">
-
-            <h2 class="section-title">
-
-                Solar System Simulation
-
-            </h2>
-
-            <div id="solar-container">
-
-                <div class="sun"></div>
-
-                <div class="orbit mercury-orbit">
-                    <div class="planet mercury"
-                        data-planet="Mercury"></div>
+        <div class="container-fluid px-md-5">
+            <div class="row align-items-center justify-content-center min-vh-100">
+                
+                <div class="col-lg-7 text-center position-relative order-2 order-lg-1">
+                    <h2 class="text-white mb-4 d-lg-none">Solar System Simulation</h2>
+                    <div id="solar-container">
+                        <div class="sun" data-planet="Matahari"></div>
+ 
+                        <div class="orbit mercury-orbit"><div class="planet mercury" data-planet="Merkurius"></div></div>
+                        <div class="orbit venus-orbit"><div class="planet venus" data-planet="Venus"></div></div>
+                        <div class="orbit earth-orbit"><div class="planet earth" data-planet="Bumi"></div></div>
+                        <div class="orbit mars-orbit"><div class="planet mars" data-planet="Mars"></div></div>
+                        <div class="orbit jupiter-orbit"><div class="planet jupiter" data-planet="Jupiter"></div></div>
+                        <div class="orbit saturn-orbit"><div class="planet saturn" data-planet="Saturnus"></div></div>
+                        <div class="orbit uranus-orbit"><div class="planet uranus" data-planet="Uranus"></div></div>
+                        <div class="orbit neptune-orbit"><div class="planet neptune" data-planet="Neptunus"></div></div>
+                    </div>
                 </div>
 
-                <div class="orbit venus-orbit">
-                    <div class="planet venus"
-                        data-planet="Venus"></div>
-                </div>
+                <div class="col-lg-5 mt-5 mt-lg-0 order-1 order-lg-2">
+                    <div id="side-planet-card" class="card bg-dark text-white border-light shadow-lg d-none">
+                        </div>
 
-                <div class="orbit earth-orbit">
-                    <div class="planet earth"
-                        data-planet="Earth"></div>
-                </div>
+                    <div id="initial-instruction"
+     class="text-center p-4 rounded-4">
 
-                <div class="orbit mars-orbit">
-                    <div class="planet mars"
-                        data-planet="Mars"></div>
-                </div>
+    <p class="mb-0 fs-4 fw-semibold instruction-text">
+        Klik salah satu planet yang sedang mengorbit untuk menghentikan pergerakannya dan melihat informasi lengkap planet tersebut.
+    </p>
 
-                <div class="orbit jupiter-orbit">
-                    <div class="planet jupiter"
-                        data-planet="Jupiter"></div>
-                </div>
-
-                <div class="orbit saturn-orbit">
-                    <div class="planet saturn"
-                        data-planet="Saturn"></div>
-                </div>
-
-                <div class="orbit uranus-orbit">
-                    <div class="planet uranus"
-                        data-planet="Uranus"></div>
-                </div>
-
-                <div class="orbit neptune-orbit">
-                    <div class="planet neptune"
-                        data-planet="Neptune"></div>
-                </div>
+</div>
 
             </div>
-
         </div>
-
-    </section>
-
-    <!-- SECTION LAIN -->
-
-    <section id="planet-info">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Planet Information
-            </h2>
-
-            <div id="planet-card">
-
-                Klik salah satu planet
-                untuk melihat informasi.
-
-            </div>
-
-        </div>
-
     </section>
 
     <section id="statistics">
+    <div class="container py-5">
 
-        <div class="container">
+        <h2 class="text-center fw-bold mb-5">
+            Statistik Ukuran Planet
+        </h2>
 
-            <h2 class="section-title">
+        <div id="statistics-content"></div>
 
-                Planet Statistics
-
-            </h2>
-
-            <div id="statistics-content">
-
-            </div>
-
-        </div>
-
-    </section>
+    </div>
+</section>
 
     <section id="maps"></section>
-
     <section id="observatory"></section>
-
     <footer></footer>
 
-    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JS -->
+    
     <script src="js/canvas.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 
 </html>

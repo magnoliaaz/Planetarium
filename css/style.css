@@ -1,425 +1,491 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:black;
-    color:white;
-    overflow-x:hidden;
+body {
+    background: black;
+    color: white;
+    overflow-x: hidden;
 }
 
-section{
-    min-height:100vh;
+section {
+    min-height: 100vh;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
 /* NAVBAR */
-
-.navbar{
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(10px);
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
 }
 
-.nav-link{
-    transition:.3s;
+.nav-link {
+    transition: .3s;
 }
 
-.nav-link:hover{
-    color:#00ffff;
+.nav-link:hover {
+    color: #00ffff;
 }
 
 /* HERO */
-
-#hero{
-
-    position:relative;
-
+#hero {
+    position: relative;
     background:
-    radial-gradient(
-        circle at top left,
-        rgba(0,255,255,.15),
-        transparent 40%
-    ),
-
-    radial-gradient(
-        circle at bottom right,
-        rgba(128,0,255,.2),
-        transparent 40%
-    ),
-
-    linear-gradient(
-        180deg,
-        #020024,
-        #090979,
-        #000000
-    );
-
+        radial-gradient(circle at top left, rgba(0, 255, 255, .15), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(128, 0, 255, .2), transparent 40%),
+        linear-gradient(180deg, #020024, #090979, #000000);
 }
 
-.hero-title{
-
-    font-size:5rem;
-
-    font-weight:bold;
-
+.hero-title {
+    font-size: 5rem;
+    font-weight: bold;
     text-shadow:
-
-    0 0 10px cyan,
-    0 0 20px cyan,
-    0 0 40px cyan,
-    0 0 80px cyan;
-
+        0 0 10px cyan,
+        0 0 20px cyan,
+        0 0 40px cyan,
+        0 0 80px cyan;
 }
 
-.hero-text{
-    font-size:1.2rem;
+.hero-text {
+    font-size: 1.2rem;
 }
 
-.hero-planet{
+.hero-planet {
+    width: 350px;
+    height: 350px;
+    margin: auto;
 
-    width:350px;
-    height:350px;
+    background-image: url("../assets/planet/neptunus2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
-    margin:auto;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle at 30% 30%,
-        #7ec8ff,
-        #0044aa,
-        #001133
-    );
-
-    box-shadow:
-    0 0 50px #00ffff,
-    0 0 100px #00ffff;
+    filter:
+        drop-shadow(0 0 20px #00ffff)
+        drop-shadow(0 0 40px #00ffff);
 
     animation:
-    floating 5s ease-in-out infinite;
-
+        floating 5s ease-in-out infinite,
+        rotatePlanet 40s linear infinite;
 }
 
-@keyframes floating{
-
-    0%{
-        transform:
-        translateY(0px);
+@keyframes rotatePlanet {
+    from {
+        transform: rotate(0deg);
     }
-
-    50%{
-        transform:
-        translateY(-20px);
+    to {
+        transform: rotate(360deg);
     }
+}
 
-    100%{
-        transform:
-        translateY(0px);
-    }
-
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 /* CANVAS */
-
-#starCanvas{
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    z-index:1;
-
+#starCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-.container{
-
-    position:relative;
-
-    z-index:2;
-
+.container {
+    position: relative;
+    z-index: 2;
 }
 
-/* SOLAR SYSTEM */
-
-#solar-system{
-
-    background:#000;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
+/* SOLAR SYSTEM CONTAINER */
+#solar-system {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.section-title{
-
-    text-align:center;
-
-    margin-bottom:50px;
-
+#solar-container {
+    position: relative;
+    width: 900px;
+    height: 900px;
+    margin: auto;
+    transition: transform 0.6s ease-in-out, opacity 0.5s ease;
 }
 
-#solar-container{
-
-    position:relative;
-
-    width:900px;
-    height:900px;
-
-    margin:auto;
-    overflow:visible;
-
+#solar-container.zoom-mode {
+    transform: scale(0.85);
 }
 
-/* SUN */
+/* SUN DESIGN */
+/* SUN DESIGN */
+.sun {
+    position: absolute;
+    width: 110px;
+    height: 110px;
 
-.sun{
+    background-image: url("../assets/planet/matahari.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
-    position:absolute;
+    border-radius: 50%;
 
-    width:100px;
-    height:100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    background:
-    radial-gradient(
-        circle,
-        #fff8b0,
-        orange,
-        #ff5500
-    );
+    cursor: pointer;
 
-    border-radius:50%;
+  box-shadow:
+    0 0 15px #ff9900,
+    0 0 15px #ff6600;
 
-    top:50%;
-    left:50%;
-
-    transform:
-    translate(-50%,-50%);
-
-    box-shadow:
-    0 0 50px orange,
-    0 0 100px orange;
-
-    animation:
-    sunGlow 3s infinite alternate;
-
+    animation: sunGlow 3s infinite alternate;
+    transition: all 0.5s ease;
+    z-index: 20;
 }
 
-@keyframes sunGlow{
+#solar-container.zoom-mode .sun {
+    opacity: 0.1;
+}
 
-    from{
-
+@keyframes sunGlow {
+    from {
         box-shadow:
-        0 0 40px orange,
-        0 0 80px orange;
-
+            0 0 40px #ff9900,
+            0 0 80px #ff6600;
     }
 
-    to{
-
+    to {
         box-shadow:
-        0 0 80px orange,
-        0 0 150px orange;
-
+            0 0 70px #ff9900,
+            0 0 140px #ff6600;
     }
-
 }
 
-/* ORBIT */
+/* SUN STATE */
+.sun.inactive-planet {
+    opacity: 0.1;
+    filter: grayscale(100%);
+}
 
-.orbit{
+.sun.active-highlight {
 
-    position:absolute;
-
-    border:
-    1px solid rgba(255,255,255,.2);
-
-    border-radius:50%;
-
-    top:50%;
-    left:50%;
+    left:50% !important;
+    top:50% !important;
 
     transform:
-    translate(-50%,-50%);
+        translate(-50%, -50%)
+        scale(3.5) !important;
 
-    pointer-events:none;
+    opacity:1 !important;
 
+    z-index:9999;
+
+    transition:all .8s ease;
 }
 
-.orbit .planet{
-    pointer-events:auto;
+/* STABLE ORBIT DESIGN */
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background: transparent;
 }
 
-/* ORBIT SIZE */
+/* UKURAN DIAMETER ORBIT UTUH (DIPASTIKAN PAS DENGAN JS RADIUS) */
+.mercury-orbit { width: 150px; height: 150px; }
+.venus-orbit   { width: 220px; height: 220px; }
+.earth-orbit   { width: 300px; height: 300px; }
+.mars-orbit    { width: 380px; height: 380px; }
+.jupiter-orbit { width: 470px; height: 470px; }
+.saturn-orbit  { width: 560px; height: 560px; }
+.uranus-orbit  { width: 650px; height: 650px; }
+.neptune-orbit { width: 740px; height: 740px; }
 
-.mercury-orbit{
-    width:150px;
-    height:150px;
+/* RE-DESIGN PLANET: EFEK BOLA 3D REALISTIS */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                opacity 0.4s ease;
+
+    user-select: none;
 }
 
-.venus-orbit{
-    width:220px;
-    height:220px;
+/* Hitbox Tambahan Biar Gampang Diklik */
+.planet::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border-radius: 50%;
 }
 
-.earth-orbit{
-    width:300px;
-    height:300px;
+.planet:hover {
+    transform: translate(-50%, -50%) scale(1.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8) !important;
 }
 
-.mars-orbit{
-    width:380px;
-    height:380px;
+.planet.inactive-planet {
+    opacity: 0.1;
+    filter: grayscale(90%);
+    pointer-events: none;
 }
 
-.jupiter-orbit{
-    width:470px;
-    height:470px;
-}
+.planet.active-highlight {
 
-.saturn-orbit{
-    width:560px;
-    height:560px;
-}
+    position:absolute !important;
 
-.uranus-orbit{
-    width:650px;
-    height:650px;
-}
-
-.neptune-orbit{
-    width:740px;
-    height:740px;
-}
-
-/* PLANET */
-
-.planet{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    top:50%;
-    left:100%;
+    left:50% !important;
+    top:50% !important;
 
     transform:
-    translate(-50%,-50%);
+        translate(-50%, -50%)
+        scale(5) !important;
 
-    
+    z-index:9999;
 
+    filter:
+        drop-shadow(0 0 20px white)
+        drop-shadow(0 0 40px cyan);
+
+    transition:all .8s ease;
 }
 
-.planet:hover{
-
-    transform:
-    translate(-50%,-50%)
-    scale(1.3);
-
-    box-shadow:
-    0 0 15px white;
-
-}
+/* =========================
+   PLANET PAKAI GAMBAR PNG
+========================= */
 
 .mercury{
-    width:10px;
-    height:10px;
-    background:gray;
+    width:20px;
+    height:20px;
+    background-image:url("../assets/planet/merkurius.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    box-shadow:none;
 }
 
 .venus{
-    width:15px;
-    height:15px;
-    background:gold;
+    width:28px;
+    height:28px;
+    background-image:url("../assets/planet/venus.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    box-shadow:none;
 }
 
 .earth{
-    width:18px;
-    height:18px;
-    background:dodgerblue;
+    width:30px;
+    height:30px;
+    background-image:url("../assets/planet/bumi.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    box-shadow:none;
 }
 
 .mars{
-    width:16px;
-    height:16px;
-    background:red;
+    width:24px;
+    height:24px;
+    background-image:url("../assets/planet/mars.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    box-shadow:none;
 }
 
 .jupiter{
-    width:35px;
-    height:35px;
-    background:#d8a25e;
+    width:52px;
+    height:52px;
+    background-image:url("../assets/planet/jupiter.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    box-shadow:none;
 }
 
 .saturn{
-    width:30px;
-    height:30px;
-    background:#f4d28c;
+    width:60px;
+    height:60px;
+    background-image:url("../assets/planet/saturnus.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    box-shadow:none;
 }
 
 .uranus{
-    width:24px;
-    height:24px;
-    background:#7fffd4;
+    width:38px;
+    height:38px;
+    background-image:url("../assets/planet/uranus.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    box-shadow:none;
 }
 
 .neptune{
-    width:22px;
-    height:22px;
-    background:#4169e1;
+    width:36px;
+    height:36px;
+    background-image:url("../assets/planet/neptunus.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    box-shadow:none;
 }
 
-#planet-info{
-
-    background:#050505;
-
-    padding:100px 0;
-
+/* Hapus cincin CSS lama saturn */
+.saturn::before{
+    display:none;
+}
+/* PANEL INFO TAMBAHAN */
+#side-planet-card {
+    background: #111 !important;
+    border-radius: 20px;
 }
 
-#planet-card{
+.border-dashed {
+    border-style: dashed !important;
+}
 
-    background:#111;
+#statistics {
+    background: black;
+    padding: 100px 0;
+}
 
-    padding:30px;
+.instruction-text{
+    color:#ffffff;
+    text-shadow:
+        0 0 8px rgba(255,255,255,.5),
+        0 0 16px rgba(0,255,255,.4);
+    letter-spacing:.5px;
+    line-height:1.8;
+}
 
-    border-radius:20px;
-
-    max-width:800px;
-
+#initial-instruction{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    max-width:900px;
     margin:auto;
+}
 
-    box-shadow:
-    0 0 20px rgba(0,255,255,.2);
-
+.focus-planet-mode {
+    height: 100vh;
+    overflow: hidden;
 }
 
 #statistics{
-
-    background:black;
-
+    background:#050505;
     padding:100px 0;
+}
 
+/* =========================
+   PLANET STATISTICS
+========================= */
+
+#statistics{
+    background:
+        radial-gradient(circle at center,
+        rgba(0,255,255,.05),
+        transparent 50%),
+        #050505;
+
+    padding:120px 0;
+}
+
+#statistics h2{
+    text-align:center;
+    margin-bottom:60px;
+    text-shadow:
+        0 0 10px cyan,
+        0 0 20px cyan;
 }
 
 .stat-card{
+    background:rgba(255,255,255,.04);
 
-    background:#111;
+    border:1px solid rgba(255,255,255,.08);
 
-    padding:20px;
+    border-radius:24px;
 
-    border-radius:15px;
+    padding:25px;
 
+    height:100%;
+
+    text-align:center;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(0,255,255,.5);
+
+    box-shadow:
+        0 0 15px rgba(0,255,255,.3),
+        0 0 40px rgba(0,255,255,.15);
+}
+
+.planet-stat-img{
+    width:100px;
+    height:100px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:auto auto 15px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,255,255,.4));
+}
+
+.stat-title{
+    font-size:1.4rem;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.stat-diameter{
+    color:#aaa;
     margin-bottom:20px;
+}
 
+.progress{
+    height:18px;
+    border-radius:50px;
+    background:#222;
+}
+
+.progress-bar{
+    font-weight:bold;
 }
