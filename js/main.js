@@ -246,3 +246,90 @@ fetch("data/planets.json")
         container.innerHTML = html;
 
     });
+
+    /* =========================
+   OBSERVATORY MAP
+========================= */
+
+const map =
+L.map("map").setView(
+    [-2.5,118],
+    5
+);
+
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        attribution:
+        "&copy; OpenStreetMap"
+    }
+).addTo(map);
+
+fetch("data/observatory.json")
+
+.then(response =>
+    response.json()
+)
+
+.then(data => {
+
+    const card =
+    document.getElementById(
+        "observatory-card"
+    );
+
+    data.forEach(obs => {
+
+    const marker =
+    L.marker([
+        obs.lat,
+        obs.lng
+    ]).addTo(map);
+
+    marker.bindPopup(`
+    <div class="popup-observatory">
+        <img src="${obs.image}" alt="${obs.name}">
+        
+    </div>
+
+
+    <br>
+
+    <strong>${obs.name}</strong>
+
+    <br>
+
+    ${obs.city}
+
+`);
+
+    marker.on("click", () => {
+
+        card.innerHTML = `
+        <img
+        src="${obs.image}"
+        alt="${obs.name}"
+        class="observatory-image">
+
+            <h3 class="text-info">
+                ${obs.name}
+            </h3>
+
+            <hr>
+
+            <p>
+                <strong>Kota:</strong>
+                ${obs.city}
+            </p>
+
+            <p>
+                ${obs.description}
+            </p>
+
+        `;
+
+    });
+
+});
+
+});

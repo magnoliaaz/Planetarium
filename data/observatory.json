@@ -1,0 +1,43 @@
+[
+    {
+        "name":"Observatorium Bosscha",
+        "city":"Bandung",
+        "lat":-6.8244,
+        "lng":107.6156,
+        "image":"images/bosscha.jpg",
+        "description":"Observatorium tertua di Indonesia yang dikelola ITB."
+    },
+    {
+        "name":"Planetarium dan Observatorium Jakarta",
+        "city":"Jakarta",
+        "lat":-6.1864,
+        "lng":106.8369,
+        "image":"images/jakarta.jpg",
+        "description":"Pusat edukasi astronomi di Taman Ismail Marzuki."
+    },
+    {
+        
+        "name":"Observatorium Tgk Chiek Kuta Karang",
+        "city":"Aceh",
+        "lat":5.5483,
+        "lng":95.3238,
+        "image":"images/aceh.jpg",
+        "description":"Observatorium untuk pengamatan hilal dan astronomi."
+    },
+    {
+        "name":"Observatorium ITERA",
+        "city":"Lampung",
+        "lat":-5.3580,
+        "lng":105.3145,
+        "image":"images/itera.jpg",
+        "description":"Observatorium milik Institut Teknologi Sumatera."
+    },
+    {
+        "name":"Observatorium Timau",
+        "city":"Kupang",
+        "lat":-9.6684,
+        "lng":123.8966,
+        "image":"images/timau.jpg",
+        "description":"Observatorium nasional terbesar di Indonesia."
+    }
+]

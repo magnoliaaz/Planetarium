@@ -6,7 +6,7 @@
   "gravity": "274 m/s²",
   "satellites": "8 Planet",
   "description": "Matahari adalah bintang pusat Tata Surya.",
-  "image": "images/matahari.png"
+  "image": "assets/planet/matahari.png"
   },
   {
     "name": "Merkurius",
@@ -15,7 +15,7 @@
     "gravity": "3.7 m/s²",
     "satellites": "0",
     "description": "Planet terkecil dan terdekat dengan Matahari.",
-    "image": "images/merkurius.png"
+    "image": "assets/planet/merkurius.png"
   },
   {
     "name": "Venus",
@@ -24,7 +24,7 @@
     "gravity": "8.87 m/s²",
     "satellites": "0",
     "description": "Planet terpanas di tata surya.",
-    "image": "images/venus.png"
+    "image": "assets/planet/venus.png"
   },
   {
     "name": "Bumi",
@@ -33,7 +33,7 @@
     "gravity": "9.8 m/s²",
     "satellites": "1",
     "description": "Satu-satunya planet yang diketahui mendukung kehidupan.",
-    "image": "images/bumi.png"
+    "image": "assets/planet/bumi.png"
   },
   {
     "name": "Mars",
@@ -42,7 +42,7 @@
     "gravity": "3.71 m/s²",
     "satellites": "2",
     "description": "Dikenal sebagai Planet Merah.",
-    "image": "images/mars.png"
+    "image": "assets/planet/mars.png"
   },
   {
     "name": "Jupiter",
@@ -51,7 +51,7 @@
     "gravity": "24.79 m/s²",
     "satellites": "95",
     "description": "Planet terbesar di tata surya.",
-    "image": "images/jupiter.png"
+    "image": "assets/planet/jupiter.png"
   },
   {
     "name": "Saturnus",
@@ -60,7 +60,7 @@
     "gravity": "10.44 m/s²",
     "satellites": "146",
     "description": "Terkenal dengan cincin indahnya.",
-    "image": "images/saturnus.png"
+    "image": "assets/planet/saturnus.png"
   },
   {
     "name": "Uranus",
@@ -69,7 +69,7 @@
     "gravity": "8.69 m/s²",
     "satellites": "27",
     "description": "Berputar hampir menyamping.",
-    "image": "images/uranus.png"
+    "image": "assets/planet/uranus.png"
   },
   {
     "name": "Neptunus",
@@ -78,6 +78,6 @@
     "gravity": "11.15 m/s²",
     "satellites": "14",
     "description": "Planet terjauh dari Matahari.",
-    "image": "images/neptunus.png"
+    "image": "assets/planet/neptunus.png"
   }
 ]
