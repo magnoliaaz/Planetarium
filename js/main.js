@@ -99,10 +99,6 @@ document.body.classList.add("focus-planet-mode");
                         ${data.name}
                     </h2>
 
-                    <p class="text-muted small mb-4">
-                        Karakteristik & Informasi Planet
-                    </p>
-
                     <hr class="border-light opacity-25">
 
                     <div class="row text-start my-4 g-3">
@@ -331,5 +327,44 @@ fetch("data/observatory.json")
     });
 
 });
+
+});
+
+/* =========================
+   ACTIVE NAVBAR LINK
+========================= */
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href") === "#" + current
+        ) {
+            link.classList.add("active");
+        }
+
+    });
 
 });
