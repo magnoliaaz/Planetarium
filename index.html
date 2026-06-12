@@ -6,28 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planetarium Interaktif</title>
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Icons -->
-<link rel="stylesheet"
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
+
             <a class="navbar-brand" href="#">
-    <i class="bi bi-rocket-takeoff-fill"></i>
-    Planetarium
-</a>
+                <i class="bi bi-rocket-takeoff-fill"></i>
+                Planetarium
+            </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#hero">Beranda</a></li>
@@ -36,192 +40,252 @@
                     <li class="nav-item"><a class="nav-link" href="#observatory">Observatorium</a></li>
                 </ul>
             </div>
+
         </div>
     </nav>
 
+    <!-- HERO -->
     <section id="hero">
+
         <canvas id="starCanvas"></canvas>
+
         <div class="container">
             <div class="row min-vh-100 align-items-center">
+
                 <div class="col-lg-6">
                     <h1 class="hero-title">Planetarium Interaktif</h1>
-                    <p class="hero-text text-light-50 mt-3">Jelajahi tata surya dan temukan fakta menarik tentang planet.</p>
-                    <a href="#solar-system" class="btn hero-btn mt-3 px-4 py-2">Jelajahi sekarang!</a>
+                    <p class="hero-text text-light-50 mt-3">
+                        Jelajahi tata surya dan temukan fakta menarik tentang planet.
+                    </p>
+                    <a href="#solar-system" class="btn hero-btn mt-3 px-4 py-2">
+                        Jelajahi sekarang!
+                    </a>
                 </div>
+
                 <div class="col-lg-6 text-center">
                     <div class="hero-planet"></div>
                 </div>
+
             </div>
         </div>
+
     </section>
 
+    <!-- SOLAR SYSTEM -->
     <section id="solar-system" class="position-relative">
-        
-        <button id="btn-resume" class="btn btn-outline-light position-absolute d-none" style="top: 100px; left: 30px; z-index: 100;">
+
+        <button id="btn-resume"
+                class="btn btn-outline-light position-absolute d-none"
+                style="top: 100px; left: 30px; z-index: 100;">
             ← Kembali & Putar Orbit
         </button>
 
         <div class="container-fluid px-md-5">
+
             <div class="row align-items-center justify-content-center min-vh-100">
-                
+
                 <div class="col-lg-7 text-center position-relative order-2 order-lg-1">
-                    <h2 class="text-white mb-4 d-lg-none">Solar System Simulation</h2>
+
+                    <h2 class="text-white mb-4 d-lg-none">
+                        Solar System Simulation
+                    </h2>
+
                     <div id="solar-container">
+
                         <div class="sun" data-planet="Matahari"></div>
- 
-                        <div class="orbit mercury-orbit"><div class="planet mercury" data-planet="Merkurius"></div></div>
-                        <div class="orbit venus-orbit"><div class="planet venus" data-planet="Venus"></div></div>
-                        <div class="orbit earth-orbit"><div class="planet earth" data-planet="Bumi"></div></div>
-                        <div class="orbit mars-orbit"><div class="planet mars" data-planet="Mars"></div></div>
-                        <div class="orbit jupiter-orbit"><div class="planet jupiter" data-planet="Jupiter"></div></div>
-                        <div class="orbit saturn-orbit"><div class="planet saturn" data-planet="Saturnus"></div></div>
-                        <div class="orbit uranus-orbit"><div class="planet uranus" data-planet="Uranus"></div></div>
-                        <div class="orbit neptune-orbit"><div class="planet neptune" data-planet="Neptunus"></div></div>
+
+                        <div class="orbit mercury-orbit">
+                            <div class="planet mercury" data-planet="Merkurius"></div>
+                        </div>
+
+                        <div class="orbit venus-orbit">
+                            <div class="planet venus" data-planet="Venus"></div>
+                        </div>
+
+                        <div class="orbit earth-orbit">
+                            <div class="planet earth" data-planet="Bumi"></div>
+                        </div>
+
+                        <div class="orbit mars-orbit">
+                            <div class="planet mars" data-planet="Mars"></div>
+                        </div>
+
+                        <div class="orbit jupiter-orbit">
+                            <div class="planet jupiter" data-planet="Jupiter"></div>
+                        </div>
+
+                        <div class="orbit saturn-orbit">
+                            <div class="planet saturn" data-planet="Saturnus"></div>
+                        </div>
+
+                        <div class="orbit uranus-orbit">
+                            <div class="planet uranus" data-planet="Uranus"></div>
+                        </div>
+
+                        <div class="orbit neptune-orbit">
+                            <div class="planet neptune" data-planet="Neptunus"></div>
+                        </div>
+
                     </div>
+
                 </div>
 
                 <div class="col-lg-5 mt-5 mt-lg-0 order-1 order-lg-2">
-                    <div id="side-planet-card" class="card bg-dark text-white border-light shadow-lg d-none">
-                        </div>
+
+                    <div id="side-planet-card"
+                         class="card bg-dark text-white border-light shadow-lg d-none">
+                    </div>
 
                     <div id="initial-instruction"
-     class="text-center p-4 rounded-4">
+                         class="text-center p-4 rounded-4">
 
-    <p class="mb-0 fs-4 fw-semibold instruction-text">
-        Klik salah satu planet yang sedang mengorbit untuk menghentikan pergerakannya dan melihat informasi lengkap planet tersebut.
-    </p>
+                        <p class="mb-0 fs-4 fw-semibold instruction-text">
+                            Klik salah satu planet yang sedang mengorbit untuk menghentikan pergerakannya dan melihat informasi lengkap planet tersebut.
+                        </p>
 
-</div>
+                    </div>
+
+                </div>
 
             </div>
+
         </div>
+
     </section>
 
+    <!-- STATISTICS -->
     <section id="statistics">
-    <div class="container py-5">
 
-        <h2 class="text-center fw-bold mb-5">
-            Statistik Ukuran Planet
-        </h2>
+        <div class="container py-5">
 
-        <div id="statistics-content"></div>
+            <h2 class="text-center fw-bold mb-5">
+                Statistik Ukuran Planet
+            </h2>
 
-    </div>
-</section>
+            <div id="statistics-content"></div>
 
+        </div>
+
+    </section>
+
+    <!-- MAPS / OBSERVATORY -->
     <section id="maps">
-        
+
         <section id="observatory">
 
-    <div class="container py-5">
+            <div class="container py-5">
 
-        <h2 class="text-center fw-bold mb-5">
-            Map Observatorium
-        </h2>
+                <h2 class="text-center fw-bold mb-5">
+                    Map Observatorium
+                </h2>
 
-        <div class="row">
+                <div class="row">
 
-            <div class="col-lg-12">
+                    <div class="col-lg-12">
 
-                <div id="map">
-                    
+                        <div id="map"></div>
+
+                    </div>
 
                 </div>
-                
 
             </div>
 
-            
+        </section>
 
-        </div>
-
-    </div>
-
-</section>
     </section>
-    
+
+    <!-- FOOTER -->
     <footer class="footer-section">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="row gy-4">
+            <div class="row gy-4">
 
-            <!-- KIRI -->
-            <div class="col-md-5">
-                <h4 class="footer-title">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    Planetarium Interaktif
-                </h4>
+                <!-- KIRI -->
+                <div class="col-md-5">
 
-                <p class="footer-text mt-3">
-                    Platform edukasi astronomi berbasis web yang mengintegrasikan simulasi orbit real-time, visualisasi data statistik, dan pemetaan observatorium untuk memberikan pengalaman belajar tata surya secara interaktif dan komprehensif
-                </p>
-            </div>
+                    <h4 class="footer-title">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        Planetarium Interaktif
+                    </h4>
 
-            <!-- TENGAH -->
-            <div class="col-md-3 ps-md-5">
-                <h5 class="footer-subtitle">
-                    <i class="fa-solid fa-compass"></i>
-                    Navigasi
-                </h5>
+                    <p class="footer-text mt-3">
+                        Platform edukasi astronomi berbasis web yang mengintegrasikan simulasi orbit real-time, visualisasi data statistik, dan pemetaan observatorium untuk memberikan pengalaman belajar tata surya secara interaktif dan komprehensif
+                    </p>
 
-                <ul class="footer-links">
-                    <li><a href="#hero">Beranda</a></li>
-                    <li><a href="#solar-system">Tata Surya</a></li>
-                    <li><a href="#statistics">Statistik</a></li>
-                    <li><a href="#observatory">Observatorium</a></li>
-                </ul>
-            </div>
-
-            <!-- KANAN -->
-            <div class="col-md-4">
-                <h5 class="footer-subtitle">
-                    <i class="fa-solid fa-users"></i>
-                    Tim Pengembang
-                </h5>
-
-                <ul class="footer-links">
-                    <li>Tengku Auryn Febrina</li>
-                    <li>Azkya Aisyah Rahima</li>
-                    <li>Magnolia Azizah Carissa</li>
-                </ul>
-
-                <h5 class="footer-subtitle mt-4">
-                    <i class="fa-solid fa-envelope"></i>
-                    Kontak
-                </h5>
-
-                <p class="footer-text mb-2">
-                    planetariuminteraktif@gmail.com
-                </p>
-
-                <div class="footer-social">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
                 </div>
+
+                <!-- TENGAH -->
+                <div class="col-md-3 ps-md-5">
+
+                    <h5 class="footer-subtitle">
+                        <i class="fa-solid fa-compass"></i>
+                        Navigasi
+                    </h5>
+
+                    <ul class="footer-links">
+                        <li><a href="#hero">Beranda</a></li>
+                        <li><a href="#solar-system">Tata Surya</a></li>
+                        <li><a href="#statistics">Statistik</a></li>
+                        <li><a href="#observatory">Observatorium</a></li>
+                    </ul>
+
+                </div>
+
+                <!-- KANAN -->
+                <div class="col-md-4">
+
+                    <h5 class="footer-subtitle">
+                        <i class="fa-solid fa-users"></i>
+                        Tim Pengembang
+                    </h5>
+
+                    <ul class="footer-links">
+                        <li>Tengku Auryn Febrina</li>
+                        <li>Azkya Aisyah Rahima</li>
+                        <li>Magnolia Azizah Carissa</li>
+                    </ul>
+
+                    <h5 class="footer-subtitle mt-4">
+                        <i class="fa-solid fa-envelope"></i>
+                        Kontak
+                    </h5>
+
+                    <p class="footer-text mb-2">
+                        planetariuminteraktif@gmail.com
+                    </p>
+
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="text-center">
+                <p class="footer-copy">
+                    © 2026 Planetarium Interaktif — Web Programming Final Project • Politeknik Negeri Jakarta
+                </p>
             </div>
 
         </div>
 
-        <hr class="footer-divider">
+    </footer>
 
-        <div class="text-center">
-            <p class="footer-copy">
-                © 2026 Planetarium Interaktif — Web Programming Final Project • Politeknik Negeri Jakarta
-            </p>
-        </div>
-
-    </div>
-
-</footer>
-
+    <!-- SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script src="js/canvas.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
