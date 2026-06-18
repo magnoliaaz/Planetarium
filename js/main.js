@@ -69,11 +69,11 @@ document.querySelectorAll(".planet, .sun").forEach(planet => {
 
 document.body.classList.add("focus-planet-mode");
 
-    document.getElementById("solar-system")
-        .scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+    document.getElementById("planet-info-section")
+    .scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
             solarContainer.classList.add("zoom-mode");
 
             document.querySelectorAll(".planet, .sun").forEach(p => {

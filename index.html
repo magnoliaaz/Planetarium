@@ -74,13 +74,13 @@
     <!-- SOLAR SYSTEM -->
     <section id="solar-system" class="position-relative">
 
-        <button id="btn-resume"
-                class="btn btn-outline-light position-absolute d-none"
-                style="top: 100px; left: 30px; z-index: 100;">
-            ← Kembali & Putar Orbit
-        </button>
-
         <div class="container-fluid px-md-5">
+
+            <div class="container pt-5">
+            <h2 class="text-center fw-bold solar-title">
+                Simulasi Tata Surya
+            </h2>
+        </div>
 
             <div class="row align-items-center justify-content-center min-vh-100">
 
@@ -130,20 +130,27 @@
 
                 </div>
 
-                <div class="col-lg-5 mt-5 mt-lg-0 order-1 order-lg-2">
+                <div class="col-lg-5 mt-5 mt-lg-0 order-1 order-lg-2"  id="planet-info-section">
+                    <div id="planet-panel">
+                        <button id="btn-resume"
+                            class="btn btn-outline-light d-none">
+                            ← Kembali & Putar Orbit
+                        </button>
 
-                    <div id="side-planet-card"
-                         class="card bg-dark text-white border-light shadow-lg d-none">
+                        <div id="side-planet-card"
+                            class="card bg-dark text-white border-light shadow-lg d-none">
+                        </div>
+
+                        <div id="initial-instruction"
+                            class="text-center p-4 rounded-4">
+
+                            <p class="mb-0 fs-4 fw-semibold instruction-text">
+                                Klik salah satu planet yang sedang mengorbit untuk menghentikan pergerakannya dan melihat informasi lengkap planet tersebut.
+                            </p>
+
+                        </div>
                     </div>
-
-                    <div id="initial-instruction"
-                         class="text-center p-4 rounded-4">
-
-                        <p class="mb-0 fs-4 fw-semibold instruction-text">
-                            Klik salah satu planet yang sedang mengorbit untuk menghentikan pergerakannya dan melihat informasi lengkap planet tersebut.
-                        </p>
-
-                    </div>
+                    
 
                 </div>
 
