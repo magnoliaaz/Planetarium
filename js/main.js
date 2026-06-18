@@ -175,73 +175,105 @@ window.scrollTo(0, lastScrollPosition);
 
 
 fetch("data/planets.json")
-    .then(response => response.json())
-    .then(data => {
+.then(response => response.json())
 
-        const container =
-            document.getElementById("statistics-content");
+.then(data => {
 
-        const maxDiameter = 139820;
+    const container =
+        document.getElementById(
+            "statistics-content"
+        );
 
-        let html = `
-            <div class="row g-4">
-        `;
+    const planetsOnly =
+        data.filter(
+            planet =>
+            planet.name !== "Matahari"
+        );
 
-        data.forEach(planet => {
+    planetsOnly.sort((a,b) => {
 
-            if (planet.name === "Matahari") return;
+        const diameterA =
+            parseInt(
+                a.diameter
+                .replace(/\./g,"")
+                .replace(" km","")
+            );
 
-            const diameter =
-                parseInt(
-                    planet.diameter
-                        .replace(/\./g, "")
-                        .replace(" km", "")
-                );
+        const diameterB =
+            parseInt(
+                b.diameter
+                .replace(/\./g,"")
+                .replace(" km","")
+            );
 
-            const percentage =
-                (diameter / maxDiameter) * 100;
+        return diameterB - diameterA;
 
-            html += `
-                <div class="col-md-6 col-lg-4">
+    });
 
-                    <div class="stat-card">
+    const maxDiameter = 139820;
 
-                        <img
-                            src="${planet.image}"
-                            alt="${planet.name}"
-                            class="planet-stat-img">
+    let html = `
+        <div class="statistics-chart">
 
-                        <h4 class="stat-title">
-                            ${planet.name}
-                        </h4>
+            <h4 class="text-center mb-5">
+                Diameter Planet (km)
+            </h4>
+    `;
 
-                        <p class="stat-diameter">
-                            Diameter: ${planet.diameter}
-                        </p>
+    planetsOnly.forEach(planet => {
 
-                        <div class="progress">
+        const diameter =
+            parseInt(
+                planet.diameter
+                .replace(/\./g,"")
+                .replace(" km","")
+            );
 
-                            <div
-                                class="progress-bar bg-info"
-                                style="width:${percentage}%">
+        const percentage =
+            (diameter / maxDiameter) * 100;
 
-                                ${Math.round(percentage)}%
+        html += `
 
-                            </div>
+            <div class="chart-row">
 
-                        </div>
+                <div class="chart-info">
 
+                    <img
+                        src="${planet.image}"
+                        alt="${planet.name}"
+                        class="chart-planet-img">
+
+                    <span class="chart-name">
+                        ${planet.name}
+                    </span>
+
+                </div>
+
+                <div class="chart-bar-wrapper">
+
+                    <div
+                        class="chart-bar"
+                        style="width:${percentage}%">
                     </div>
 
                 </div>
-            `;
-        });
 
-        html += `</div>`;
+                <div class="chart-value">
+                    ${planet.diameter}
+                </div>
 
-        container.innerHTML = html;
+            </div>
 
+        `;
     });
+
+    html += `
+        </div>
+    `;
+
+    container.innerHTML = html;
+
+});
 
     /* =========================
    OBSERVATORY MAP

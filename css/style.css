@@ -580,67 +580,136 @@ html {
         0 0 20px cyan;
 }
 
-.stat-card{
-    background:rgba(255,255,255,.04);
+/* =========================
+   BAR CHART PLANET
+========================= */
 
-    border:1px solid rgba(255,255,255,.08);
+.statistics-chart{
 
-    border-radius:24px;
+    max-width:1000px;
+    margin:auto;
 
-    padding:25px;
+}
+
+.chart-row{
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:25px;
+    transition:.3s;
+
+}
+
+.chart-row:hover{
+
+    transform:translateX(10px);
+
+}
+
+.chart-row:hover .chart-planet-img{
+
+    transform:scale(1.15);
+
+}
+
+.chart-planet-img{
+
+    transition:.3s;
+
+}
+
+.chart-name{
+
+    width:120px;
+
+    font-weight:700;
+
+    color:white;
+
+    text-align:right;
+
+}
+
+.chart-bar-wrapper{
+
+    flex:1;
+
+    height:32px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.chart-bar{
 
     height:100%;
 
-    text-align:center;
+    border-radius:50px;
 
-    backdrop-filter:blur(10px);
-
-    transition:.3s;
-}
-
-.stat-card:hover{
-    transform:translateY(-8px);
-
-    border-color:rgba(0,255,255,.5);
+    background:linear-gradient(
+        90deg,
+        #00ffff,
+        #0088ff
+    );
 
     box-shadow:
-        0 0 15px rgba(0,255,255,.3),
-        0 0 40px rgba(0,255,255,.15);
+        0 0 10px rgba(0,255,255,.5),
+        0 0 20px rgba(0,255,255,.3);
+
 }
 
-.planet-stat-img{
-    width:100px;
-    height:100px;
+.chart-value{
+
+    width:130px;
+
+    font-weight:600;
+
+    color:#ddd;
+
+}
+
+.chart-info{
+
+    width:170px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.chart-planet-img{
+
+    width:42px;
+    height:42px;
 
     object-fit:contain;
 
-    display:block;
-
-    margin:auto auto 15px;
+    flex-shrink:0;
 
     filter:
-        drop-shadow(0 0 10px rgba(255,255,255,.4));
+        drop-shadow(
+            0 0 8px
+            rgba(255,255,255,.4)
+        );
+
 }
 
-.stat-title{
-    font-size:1.4rem;
+.chart-name{
+
     font-weight:700;
-    margin-bottom:5px;
-}
 
-.stat-diameter{
-    color:#aaa;
-    margin-bottom:20px;
-}
+    color:white;
 
-.progress{
-    height:18px;
-    border-radius:50px;
-    background:#222;
-}
-
-.progress-bar{
-    font-weight:bold;
 }
 
 #observatory{
